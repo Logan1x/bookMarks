@@ -1,19 +1,23 @@
+import React from "react";
 import "./styles.css";
-import Home from "./components/show_bookmarks";
+import "./styles/tailwind-pre-build.css";
+import Navbar from "./components/Navbar";
+import LivePortal from "./components/LivePortal";
+import WorkContainer from "./components/WorkContainer";
+import HomePage from "./components/Homepage";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 export default function App() {
-  return (
-    <div className="App">
-      <div className="header">
-        <h1>BookMaarks</h1>
-        <h2>see my best bookmarked resources</h2>
-      </div>
-      <Home />
-      <footer>
-        <p>
-          Developed by <a href="https://logan1x.github.io">@logan1x</a>
-        </p>
-      </footer>
-    </div>
-  );
+	return (
+		<Router>
+			<div>
+				<Navbar />
+				<Switch>
+					<Route path="/" exact component={HomePage} />
+					<Route path="/liveportal" component={LivePortal} />
+					<Route path="/workcontainer" component={WorkContainer} />
+				</Switch>
+			</div>
+		</Router>
+	);
 }
