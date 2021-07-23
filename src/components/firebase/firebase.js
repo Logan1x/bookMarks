@@ -1,15 +1,17 @@
 import firebase from "firebase";
 
-const config = {
-  apiKey: "AIzaSyCXsFYMIpWnaZSHbY1gav-XN-A9M-0Z7gQ",
-  authDomain: "resource-docket.firebaseapp.com",
-  projectId: "resource-docket",
-  storageBucket: "resource-docket.appspot.com",
-  messagingSenderId: "319277841741",
-  appId: "1:319277841741:web:c22520f683529dcd3e0b04"
+import "firebase/firestore";
+
+// Your web app's Firebase configuration
+var firebaseConfig = {
+  apiKey: "AIzaSyDAueYZAct1LCf2ngfF_lKgla-cRM3Tmc0",
+  authDomain: "bookmarks-6faac.firebaseapp.com",
+  projectId: "bookmarks-6faac",
+  storageBucket: "bookmarks-6faac.appspot.com",
+  messagingSenderId: "190350792223",
+  appId: "1:190350792223:web:2bc20067c4f0916193672a"
 };
 // Initialize Firebase
-
-firebase.initializeApp(config);
+firebase.initializeApp(firebaseConfig);
 
 export default firebase;
