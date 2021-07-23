@@ -48,12 +48,11 @@ export default function Navbar() {
           <div className="hidden mx-2 md:flex items-center">
             {currentUser ? (
               <div className="flex items-center">
-                <a
-                  href="#"
+                <Link to="/addbookmark"
                   className="px-3 py-2 bg-blue-500 text-blue-100 rounded"
                 >
                   Add Bookmarks
-                </a>
+                </Link>
                 <img
                   className="mx-2 ml-3  w-8 h-8 border-2 border-green-700 rounded-full"
                   src={currentUser.photoURL}
@@ -108,9 +107,9 @@ export default function Navbar() {
 						<a href="#" className="py-2">
               {currentUser.displayName}
             </a>
-            <a href="#" className="py-2 my-1 bg-blue-500 text-blue-100 rounded w-40 text-center">
+            <Link to="/addbookmark" className="py-2 my-1 bg-blue-500 text-blue-100 rounded w-40 text-center">
               Add Bookmarks
-            </a>
+            </Link>
             {/* <img
               className="mx-2 ml-3  w-8 h-8 border-2 border-green-700 rounded-full"
               src={currentUser.photoURL}
