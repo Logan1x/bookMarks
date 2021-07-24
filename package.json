@@ -10,6 +10,7 @@
   "dependencies": {
     "@dhaiwat10/react-link-preview": "1.7.2",
     "firebase": "8.8.0",
+    "next": "11.0.1",
     "react": "17.0.2",
     "react-dom": "16.12.0",
     "react-router-dom": "5.1.2",

@@ -57,14 +57,14 @@ export default function Navbar() {
                   className="mx-2 ml-3  w-8 h-8 border-2 border-green-700 rounded-full"
                   src={currentUser.photoURL}
                 />
-                <a href="#" className="px-3">
+                <a href="#" className="px-1">
                   {currentUser.displayName}
                 </a>
               </div>
             ) : (
               <Link
                 to="/login"
-                className="mx-2 px-3 py-2 bg-blue-700 text-blue-100 rounded"
+                className="mx-2 px-3 py-2 bg-blue-500 text-blue-100 rounded"
               >
                 Login
               </Link>
