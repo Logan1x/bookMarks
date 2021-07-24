@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { dfcontx } from "./context/authcontext";
 
 export default function Navbar() {
-  const { currentUser } = useContext(dfcontx);
+  const { currentUser, signOut } = useContext(dfcontx);
   function navToggle() {
     document.querySelector(".mobile-nav").classList.toggle("hidden");
   }
@@ -35,12 +35,16 @@ export default function Navbar() {
             </div>
             {/* primary nav  */}
             <div className="hidden mx-2 md:flex items-center">
-              <a href="#" className="px-3">
-                Pricing
-              </a>
-              <a href="#" className="px-3">
-                About
-              </a>
+              {currentUser ? (
+                <Link
+                  to="/addbookmark"
+                  className="px-2 py-1 bg-blue-500 text-blue-100 rounded hover:shadow hover:bg-blue-700"
+                >
+                  Add Bookmarks
+                </Link>
+              ) : (
+                ""
+              )}
             </div>
           </div>
 
@@ -48,23 +52,24 @@ export default function Navbar() {
           <div className="hidden mx-2 md:flex items-center">
             {currentUser ? (
               <div className="flex items-center">
-                <Link to="/addbookmark"
-                  className="px-3 py-2 bg-blue-500 text-blue-100 rounded"
-                >
-                  Add Bookmarks
-                </Link>
                 <img
                   className="mx-2 ml-3  w-8 h-8 border-2 border-green-700 rounded-full"
                   src={currentUser.photoURL}
                 />
-                <a href="#" className="px-1">
-                  {currentUser.displayName}
+                <a className="px-1">{currentUser.displayName}</a>
+                <a
+                  className="px-3 py-1 cursor-pointer rounded border-b-2 hover:shadow"
+                  onClick={() => {
+                    signOut();
+                  }}
+                >
+                  Log Out
                 </a>
               </div>
             ) : (
               <Link
                 to="/login"
-                className="mx-2 px-3 py-2 bg-blue-500 text-blue-100 rounded"
+                className="mx-2 px-3 py-2 bg-blue-500 text-blue-100 rounded hover:bg-blue-700"
               >
                 Login
               </Link>
@@ -104,17 +109,31 @@ export default function Navbar() {
         </Link>
         {currentUser ? (
           <div className="flex flex-col block px-4 text-sm">
-						<a href="#" className="py-2">
-              {currentUser.displayName}
-            </a>
-            <Link to="/addbookmark" className="py-2 my-1 bg-blue-500 text-blue-100 rounded w-40 text-center">
+            <div className="flex items-center justify-between pb-2">
+              <a className="">
+                {currentUser.displayName}
+              </a>
+              <a
+                className="cursor-pointer border-b-2"
+                onClick={() => {
+                  signOut();
+                }}
+              >
+                Log Out
+              </a>
+            </div>
+
+            <Link
+              to="/addbookmark"
+              className="py-2 px-1 my-1 bg-blue-500 text-blue-100 rounded text-center"
+            >
               Add Bookmarks
             </Link>
+
             {/* <img
               className="mx-2 ml-3  w-8 h-8 border-2 border-green-700 rounded-full"
               src={currentUser.photoURL}
             /> */}
-            
           </div>
         ) : (
           <Link to="/login" className="block py-2 px-4 text-sm">

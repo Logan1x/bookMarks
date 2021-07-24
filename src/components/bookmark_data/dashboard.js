@@ -13,7 +13,7 @@ export default function dashboard() {
     const unsubscribe = firebase
       .firestore()
       .collection("times")
-      // .where("uid", "==", uid)
+      .where("uid", "==", currentUser.uid)
       .onSnapshot((snapshot) => {
         const newTimes = snapshot.docs.map((doc) => ({
           id: doc.id,
@@ -40,7 +40,7 @@ export default function dashboard() {
   return (
     <div>
       {loading ? (
-        <p>loading</p>
+        <p>loading...</p>
       ) : (
         <section>
           <div className="text-center flex justify-center items-center mx-auto my-3">

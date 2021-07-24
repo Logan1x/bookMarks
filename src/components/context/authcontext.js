@@ -9,7 +9,7 @@ const authcontext = (props) => {
   const [loading, setLoading] = useState(true);
 
   function signUp() {
-    console.log('reached')
+    // console.log('reached')
     var provider = new firebase.auth.GoogleAuthProvider();
     return firebase.auth().signInWithPopup(provider)
   }

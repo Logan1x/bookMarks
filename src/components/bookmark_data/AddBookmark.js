@@ -4,56 +4,45 @@ import "../../styles.css";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { dfcontx } from "../context/authcontext";
-import { useHistory } from "react-router-dom";
+// import { useRouter } from "next/router";
 
 export default function create_post() {
   const { currentUser } = useContext(dfcontx);
+  // const router = useRouter();
 
   const [link, setLink] = useState("");
-  const [tag, setTag] = useState("");
-  const [array, setArray] = useState([]);
+  const [tag, setTag] = useState("none");
 
-  const tags_data = ["design", "web", "blogging", "vocabulary"];
+  const tags_data = ["none", "design", "web", "blogging", "vocabulary"];
 
   // console.log(user)
 
   const showInfo = () => {
-    toast("Order has been confirmed & placed!", {
+    toast("Url has been Added", {
       draggable: true,
       draggablePercent: 100
     });
   };
 
-  const handleSubmit = () => {
-    const arr = [...array];
-    arr.push({
-      link: link,
-      tag: tag
-    });
-    console.log(arr);
-    setArray(arr);
-  };
-
-  // const handleDropdown = (e) => {
-  //   // console.log(e.target.value)
-  //   setTag(e.target.value);
-  // };
-
   // upload data on the firebase
 
   function formsubmit(e) {
     e.preventDefault();
-    handleSubmit();
     firebase
       .firestore()
       .collection("times")
       .add({
-        array,
+        uid: currentUser.uid,
+        link: link,
+        tag: tag,
         timestamp: firebase.firestore.FieldValue.serverTimestamp()
       })
       .then(() => {
-        setTag("");
+        setTag("none");
+        setLink("");
+        showInfo();
       });
+    // router.push("/");
   }
 
   return (
@@ -75,7 +64,6 @@ export default function create_post() {
                 onChange={(e) => setTag(e.target.value)}
                 className="p-1 ml-3 rounded shadow-md"
               >
-                <option value="none">none</option>
                 {tags_data.map((item) => {
                   return (
                     <option value={item} key={item}>
@@ -92,6 +80,12 @@ export default function create_post() {
               Submit
             </button>
           </form>
+          <ToastContainer
+            closeButton={false}
+            position="top-center"
+            style={{ textAlign: "center" }}
+            draggable
+          />
         </section>
       ) : (
         <section className="createpost">
