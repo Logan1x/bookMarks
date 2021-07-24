@@ -104,9 +104,6 @@ export default function Navbar() {
         <Link to="/" className="block px-4 text-sm">
           <li className="list-none"> Home</li>
         </Link>
-        <Link to="/workcontainer" className="block py-1 px-4 text-sm">
-          <li className="list-none"> Work Container </li>
-        </Link>
         {currentUser ? (
           <div className="flex flex-col block px-4 text-sm">
             <div className="flex items-center justify-between pb-2">

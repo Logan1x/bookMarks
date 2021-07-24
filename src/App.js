@@ -28,3 +28,5 @@ export default function App() {
     </div>
   );
 }
+
+// Todo - add about page
