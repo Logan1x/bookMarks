@@ -101,18 +101,16 @@ export default function Navbar() {
 
       {/* mobile menu */}
       <div className="mobile-nav hidden md:hidden">
-        <Link to="/" className="block py-2 px-4 text-sm">
-          <li className="list-none"> Home sweet</li>
+        <Link to="/" className="block px-4 text-sm">
+          <li className="list-none"> Home</li>
         </Link>
-        <Link to="/workcontainer" className="block py-2 px-4 text-sm">
+        <Link to="/workcontainer" className="block py-1 px-4 text-sm">
           <li className="list-none"> Work Container </li>
         </Link>
         {currentUser ? (
           <div className="flex flex-col block px-4 text-sm">
             <div className="flex items-center justify-between pb-2">
-              <a className="">
-                {currentUser.displayName}
-              </a>
+              <a className="">{currentUser.displayName}</a>
               <a
                 className="cursor-pointer border-b-2"
                 onClick={() => {
@@ -125,7 +123,7 @@ export default function Navbar() {
 
             <Link
               to="/addbookmark"
-              className="py-2 px-1 my-1 bg-blue-500 text-blue-100 rounded text-center"
+              className="py-2 px-1 my-1 mb-3 bg-blue-500 text-blue-100 rounded text-center"
             >
               Add Bookmarks
             </Link>
