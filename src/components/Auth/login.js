@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
 import firebase from "../firebase/firebase";
 import { FaTwitter, FaGoogle, FaGithub } from "react-icons/fa";
-
+import { Helmet } from "react-helmet";
 import { dfcontx } from "../context/authcontext";
 import { Link } from "react-router-dom";
+
+const TITLE = "Login | BookMaarks";
 
 function Login() {
   const { currentUser, signUp } = useContext(dfcontx);
@@ -16,6 +18,9 @@ function Login() {
 
   return (
     <div>
+      <Helmet>
+        <title>{TITLE}</title>
+      </Helmet>
       {currentUser ? (
         <div className="py-2 text-center text-3xl mt-32">
           <h1> Signed In Successfully</h1>

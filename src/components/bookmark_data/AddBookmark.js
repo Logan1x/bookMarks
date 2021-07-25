@@ -5,6 +5,9 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { dfcontx } from "../context/authcontext";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
+
+const TITLE = "Add Bookmarks | BookMaarks";
 
 export default function create_post() {
   const { currentUser } = useContext(dfcontx);
@@ -47,6 +50,9 @@ export default function create_post() {
 
   return (
     <div className="flex h-4/5 justify-center items-center my-32">
+      <Helmet>
+        <title>{TITLE}</title>
+      </Helmet>
       {currentUser ? (
         <section>
           <form onSubmit={formsubmit}>
