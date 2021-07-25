@@ -26,7 +26,10 @@ function Login() {
           <h1> Signed In Successfully</h1>
           <p>
             Visit{" "}
-            <Link to="/" className="border-b-4 border-green-300">
+            <Link
+              to="/"
+              className="border-b-4 border-green-300 hover:shadow-md rounded px-1"
+            >
               Homepage
             </Link>
           </p>

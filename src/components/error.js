@@ -12,7 +12,7 @@ export default function error() {
       </Helmet>
       <h1>
         Go{" "}
-        <span className="border-b-4 border-green-300">
+        <span className="border-b-4 border-green-300 hover:shadow-md rounded px-1">
           <Link to="/">Home</Link>
         </span>
         , You are drunk.

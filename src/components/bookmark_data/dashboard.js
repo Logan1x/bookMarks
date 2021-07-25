@@ -113,9 +113,9 @@ export default function dashboard() {
           ) : (
             <div className="text-center mt-10">
               <p className="text-2xl">
-                No data available, Add{" "}
+                No data available, Add
                 <Link
-                  className="border-b-2 border-green-300 hover:shadow"
+                  className="border-b-2 border-green-300 hover:shadow-md rounded px-1"
                   to="/addbookmark"
                 >
                   some data
