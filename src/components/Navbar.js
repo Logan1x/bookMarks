@@ -109,7 +109,7 @@ export default function Navbar() {
             <div className="flex items-center justify-between pb-2">
               <a className="">{currentUser.displayName}</a>
               <a
-                className="cursor-pointer border-b-2"
+                className="cursor-pointer border-b-2 hover:shadow-md rounded px-1"
                 onClick={() => {
                   signOut();
                 }}
@@ -124,11 +124,6 @@ export default function Navbar() {
             >
               Add Bookmarks
             </Link>
-
-            {/* <img
-              className="mx-2 ml-3  w-8 h-8 border-2 border-green-700 rounded-full"
-              src={currentUser.photoURL}
-            /> */}
           </div>
         ) : (
           <Link to="/login" className="block py-2 px-4 text-sm">
