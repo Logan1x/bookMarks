@@ -4,7 +4,7 @@ import "../../styles.css";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { dfcontx } from "../context/authcontext";
-// import { useRouter } from "next/router";
+import { Link } from "react-router-dom";
 
 export default function create_post() {
   const { currentUser } = useContext(dfcontx);
@@ -88,9 +88,17 @@ export default function create_post() {
           />
         </section>
       ) : (
-        <section className="createpost">
-          <div className="createpost-content">
-            <p>Please Sign-In By Visiting login Page.</p>
+        <section>
+          <div className="text-2xl text-center">
+            <p>
+              Please Sign-In By Visiting{" "}
+              <Link
+                className="border-b-4 border-green-300 hover:shadow-md"
+                to="/login"
+              >
+                login Page.
+              </Link>
+            </p>
           </div>
         </section>
       )}

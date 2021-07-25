@@ -2,6 +2,8 @@ import React, { useState, useEffect, useContext } from "react";
 import firebase from "../firebase/firebase";
 import { dfcontx } from "../context/authcontext";
 import { LinkPreview } from "@dhaiwat10/react-link-preview";
+import { Link } from "react-router-dom";
+import Logo from "./undraw_refreshing_beverage_td3r.png";
 
 export default function dashboard() {
   const { currentUser } = useContext(dfcontx);
@@ -26,8 +28,7 @@ export default function dashboard() {
     return unsubscribe;
   }, []);
 
-
-  console.log("arr", loading);
+  // console.log("arr", loading);
 
   const tags_data = ["design", "web", "blogging", "vocabulary"];
   const [current_selected_tag, setTag] = useState("");
@@ -42,59 +43,76 @@ export default function dashboard() {
       {loading ? (
         <p>loading...</p>
       ) : (
-        <section>
-          <div className="text-center flex justify-center items-center mx-auto my-3">
-            <p>Sort By : </p>
-            <select
-              onChange={(e) => handleDropdown(e)}
-              className="py-0.5 mx-1 rounded shadow-md bg-green-100"
-            >
-              <option value="">none</option>
-              {tags_data.map((item) => {
-                return (
-                  <option value={item} key={item}>
-                    {item}
-                  </option>
-                );
-              })}
-            </select>
-          </div>
-          <div className="flex justify-center flex-wrap max-w-6xl mx-auto text-center">
-            {/* to check if there is any tag selected or not */}
-            {current_selected_tag
-              ? times.map((item) => (
-                  <>
-                    {/* to sort by if current tag is selected */}
-                    {item.tag.includes(current_selected_tag) ? (
-                      <LinkPreview
-                        url={item.link}
-                        descriptionLength="25"
-                        className="mar-x"
-                        height="260px"
-                        width="250px"
-                        margin=".5rem"
-                        key={item}
-                      />
-                    ) : (
-                      ""
-                    )}
-                  </>
-                ))
-              : times.map((item) => (
-                  <>
-                    <LinkPreview
-                      url={item.link}
-                      descriptionLength="25"
-                      className="mar-x"
-                      height="260px"
-                      width="250px"
-                      margin=".5rem"
-                      key={item}
-                    />
-                  </>
-                ))}
-          </div>
-        </section>
+        <div>
+          {times.length > 0 ? (
+            <section>
+              <div className="text-center flex justify-center items-center mx-auto my-3">
+                <p>Sort By : </p>
+                <select
+                  onChange={(e) => handleDropdown(e)}
+                  className="py-0.5 mx-1 rounded shadow-md bg-green-100"
+                >
+                  <option value="">none</option>
+                  {tags_data.map((item) => {
+                    return (
+                      <option value={item} key={item}>
+                        {item}
+                      </option>
+                    );
+                  })}
+                </select>
+              </div>
+              <div className="flex justify-center flex-wrap max-w-6xl mx-auto text-center">
+                {/* to check if there is any tag selected or not */}
+                {current_selected_tag
+                  ? times.map((item) => (
+                      <>
+                        {/* to sort by if current tag is selected */}
+                        {item.tag.includes(current_selected_tag) ? (
+                          <LinkPreview
+                            url={item.link}
+                            descriptionLength="25"
+                            className="mar-x"
+                            height="260px"
+                            width="250px"
+                            margin=".5rem"
+                            key={item}
+                          />
+                        ) : (
+                          ""
+                        )}
+                      </>
+                    ))
+                  : times.map((item) => (
+                      <>
+                        <LinkPreview
+                          url={item.link}
+                          descriptionLength="25"
+                          className="mar-x"
+                          height="260px"
+                          width="250px"
+                          margin=".5rem"
+                          key={item}
+                        />
+                      </>
+                    ))}
+              </div>
+            </section>
+          ) : (
+            <div className="text-center mt-10">
+              <p className="text-2xl">
+                No data available, Add{" "}
+                <Link
+                  className="border-b-2 border-green-300 hover:shadow"
+                  to="/addbookmark"
+                >
+                  some data
+                </Link>
+              </p>
+              <img className="w-3/5 m-auto" src={Logo} alt="not found" />
+            </div>
+          )}
+        </div>
       )}
     </div>
   );
