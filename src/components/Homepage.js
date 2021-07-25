@@ -14,13 +14,11 @@ export default function HomePage() {
         <title>{TITLE}</title>
       </Helmet>
       <main>
-        <div className="text-center py-3 text-2xl bg-green-200 max-w-sm md:max-w-2xl mx-auto rounded shadow my-2 mx-5">
+        <div className="text-center py-3 text-2xl bg-green-200 max-w-xs md:max-w-2xl mx-auto rounded shadow my-2 mx-5">
           <h1>BookMaarks</h1>
           <h2 className="text-xl">see your best bookmarked resources</h2>
         </div>
-        <section className="w-100">
-          {currentUser ? <Dashboard /> : <Bookmark_data />}
-        </section>
+        <section>{currentUser ? <Dashboard /> : <Bookmark_data />}</section>
       </main>
     </div>
   );

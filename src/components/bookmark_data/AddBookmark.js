@@ -16,7 +16,19 @@ export default function create_post() {
   const [link, setLink] = useState("");
   const [tag, setTag] = useState("none");
 
-  const tags_data = ["none", "design", "web", "blogging", "vocabulary"];
+  const tags_data = [
+    "design",
+    "tools",
+    "web",
+    "blogging",
+    "vocabulary",
+    "ui/ux",
+    "marketing",
+    "hackathon",
+    "writing",
+    "podcasts",
+    "others"
+  ];
 
   // console.log(user)
 

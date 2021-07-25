@@ -30,7 +30,19 @@ export default function dashboard() {
 
   // console.log("arr", loading);
 
-  const tags_data = ["design", "web", "blogging", "vocabulary"];
+  const tags_data = [
+    "design",
+    "tools",
+    "web",
+    "blogging",
+    "vocabulary",
+    "ui/ux",
+    "marketing",
+    "hackathon",
+    "writing",
+    "podcasts",
+    "others"
+  ];
   const [current_selected_tag, setTag] = useState("");
 
   const handleDropdown = (e) => {

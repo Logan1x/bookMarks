@@ -1,6 +1,6 @@
 import { LinkPreview } from "@dhaiwat10/react-link-preview";
 import React, { useState } from "react";
-import Heroimg from "./undraw_Decide_re_ixfw.png";
+import Hero2 from "./undraw_noted_pc9f.png";
 
 const bookmark_data = () => {
   const arr = [
@@ -23,9 +23,34 @@ const bookmark_data = () => {
     {
       link: "https://wordize.netlify.app",
       tag: "vocabulary"
+    },
+    {
+      link: "https://softskills.audio/episodes/",
+      tag: "podcasts"
+    },
+    {
+      link: "https://www.julian.com/guide/growth/intro#growth-success",
+      tag: "marketing"
+    },
+    {
+      link: "https://coderadio.freecodecamp.org/",
+      tag: "music"
     }
   ];
-  const tags_data = ["design", "web", "blogging", "vocabulary"];
+  const tags_data = [
+    "design",
+    "tools",
+    "web",
+    "blogging",
+    "vocabulary",
+    "ui/ux",
+    "marketing",
+    "hackathon",
+    "writing",
+    "music",
+    "podcasts",
+    "others"
+  ];
   const [current_selected_tag, setTag] = useState("");
 
   const handleDropdown = (e) => {
@@ -35,11 +60,11 @@ const bookmark_data = () => {
 
   return (
     <section>
-      <div className="flex items-center justify-center mx-auto flex-wrap md:h-full my-10 px-4">
-        <h1 className="text-center text-3xl font-bold max-w-3/5">
+      <div className="flex flex-col md:flex-row justify-center items-center max-w-6xl h-700px m-auto my-20">
+        <p className="text-3xl px-4 text-center md:text-left font-bold max-w-md ">
           Welcome to a place where you can handle all your resources
-        </h1>
-        <img className="md:w-3/5" src={Heroimg} alt="heroimg" />
+        </p>
+        <img className="md:w-2/5 h-2/5 bg-blue-200" src={Hero2} />
       </div>
       <div className="text-center flex justify-center items-center mx-auto my-3">
         <p>Sort By : </p>
@@ -47,7 +72,7 @@ const bookmark_data = () => {
           onChange={(e) => handleDropdown(e)}
           className="py-0.5 mx-1 rounded shadow-md bg-green-100"
         >
-          <option value="">none</option>
+          <option value="">all</option>
           {tags_data.map((item) => {
             return (
               <option value={item} key={item}>
