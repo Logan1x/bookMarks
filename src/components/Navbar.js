@@ -16,20 +16,26 @@ export default function Navbar() {
             {/* logo */}
             <div>
               <Link to="/" className="flex py-6">
-                <svg
+                {/* <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="h-6 w-6"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                 >
+                  
                   <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     stroke-width="2"
                     d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"
                   />
-                </svg>
+                </svg> */}
+                <img
+                  className="w-5 h-5"
+                  src="https://i.imgur.com/vv5fesY.png"
+                  alt="logo"
+                />
                 <span className="px-2 font-bold"> BookMaarks </span>
               </Link>
             </div>
