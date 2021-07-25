@@ -121,7 +121,11 @@ export default function dashboard() {
                   some data
                 </Link>
               </p>
-              <img className="w-3/5 m-auto" src={Logo} alt="not found" />
+              <img
+                className="w-3/5 md:w-1/5 m-auto"
+                src={Logo}
+                alt="not found"
+              />
             </div>
           )}
         </div>
