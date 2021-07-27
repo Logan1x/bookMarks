@@ -1,6 +1,7 @@
 import { LinkPreview } from "@dhaiwat10/react-link-preview";
 import React, { useState } from "react";
 import Hero2 from "./undraw_noted_pc9f.png";
+import { Link } from "react-router-dom";
 
 const bookmark_data = () => {
   const arr = [
@@ -61,10 +62,22 @@ const bookmark_data = () => {
   return (
     <section>
       <div className="flex flex-col md:flex-row justify-center items-center max-w-6xl h-700px m-auto my-20">
-        <p className="text-3xl px-4 text-center md:text-left font-bold max-w-md ">
-          Welcome to a place where you can handle all your resources
-        </p>
-        <img className="md:w-2/5 h-2/5 bg-blue-200" src={Hero2} />
+        <div className="text-center md:text-left">
+          <p className="text-3xl px-4 mb-4 text-center md:text-left font-bold max-w-md ">
+            Welcome to a place where you can handle all your resources
+          </p>
+          <Link
+            to="/login"
+            className="px-4 py-1 bg-blue-500 text-blue-100 rounded hover:shadow hover:bg-blue-700 md:mx-6"
+          >
+            Login
+          </Link>
+        </div>
+        <img
+          className="my-2 md:w-2/5 h-2/5 bg-blue-200"
+          src={Hero2}
+          alt="heroimage"
+        />
       </div>
       <div className="text-center flex justify-center items-center mx-auto my-3">
         <p>Sort By : </p>

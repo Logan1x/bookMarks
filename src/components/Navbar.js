@@ -16,21 +16,6 @@ export default function Navbar() {
             {/* logo */}
             <div>
               <Link to="/" className="flex py-6">
-                {/* <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"
-                  />
-                </svg> */}
                 <img
                   className="w-5 h-5"
                   src="https://i.imgur.com/vv5fesY.png"
@@ -39,6 +24,7 @@ export default function Navbar() {
                 <span className="px-2 font-bold"> BookMaarks </span>
               </Link>
             </div>
+
             {/* primary nav  */}
             <div className="hidden mx-2 md:flex items-center">
               {currentUser ? (
@@ -73,12 +59,20 @@ export default function Navbar() {
                 </a>
               </div>
             ) : (
-              <Link
-                to="/login"
-                className="mx-2 px-3 py-2 bg-blue-500 text-blue-100 rounded hover:bg-blue-700"
-              >
-                Login
-              </Link>
+              <div>
+                <Link
+                  to="/login"
+                  className="mx-2 px-3 py-2 bg-blue-500 text-blue-100 rounded hover:bg-blue-700"
+                >
+                  Login
+                </Link>
+                <a
+                  href="https://github.com/Logan1x/bookMarks"
+                  className="px-3 py-2 border-0 hover:shadow-md rounded hover:border-1 "
+                >
+                  Github
+                </a>
+              </div>
             )}
           </div>
 
@@ -132,9 +126,17 @@ export default function Navbar() {
             </Link>
           </div>
         ) : (
-          <Link to="/login" className="block py-2 px-4 text-sm">
-            <li className="list-none"> Login </li>
-          </Link>
+          <div>
+            <Link to="/login" className="block py-2 px-4 text-sm">
+              <li className="list-none"> Login </li>
+            </Link>
+            <a
+              href="https://github.com/Logan1x/bookMarks"
+              className="px-4 py-2 text-sm"
+            >
+              Github
+            </a>
+          </div>
         )}
       </div>
     </nav>

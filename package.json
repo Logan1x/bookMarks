@@ -9,6 +9,7 @@
   "main": "src/index.js",
   "dependencies": {
     "@dhaiwat10/react-link-preview": "1.7.2",
+    "@firebase/firestore": "2.3.9",
     "firebase": "8.8.0",
     "react": "17.0.2",
     "react-dom": "16.12.0",
