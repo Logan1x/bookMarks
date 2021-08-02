@@ -8,10 +8,39 @@ BookMaarks:sparkles: Where you can add personalized important resources, URLs to
 
 This project is made out of ReactJS and **if you love to contribute please make a new issue and let me know.**
 
+</div>  
+
+## Tech Stack
+   **FrontEnd**: ReactJS
+   
+   **Additional NPM Libraries**
+   - react-helmet
+   - react-icons
+   - react-router-dom
+   - react-toastify
+   - react-link-preview
+   - react-scripts
+   - firebase
+  
+   **Styling** :  TailwindCSS
+     
+   **DataBase** : Firebase
+        
+   **Authentication** : Firebase
+
+## Functionality
+- Upload a Bookmark and get bookmark tile generated on dashboard. You can sort them by different tags.
+        
+<div align="center">
+        
+        
 ## Website Preview
 
 <p align="center">
         <img src="https://i.imgur.com/1n98mku.png" title="Bookmarks : Homepage" alt="Bookmarks : Homepage">
+        <img src="https://i.imgur.com/zYN6uIb.png" title="Bookmarks : Login" alt="Bookmarks : Login">
+        <img src="https://i.imgur.com/73H4pwH.png" title="Bookmarks : AddBookmark" alt="Bookmarks : AddBookmark">
+        <img src="https://i.imgur.com/AbugW5b.png" title="Bookmarks : Dashboard" alt="Bookmarks : Dashboard">
 </p>
 
 ### This Project was made with help of these contributors
@@ -22,5 +51,5 @@ This project is made out of ReactJS and **if you love to contribute please make 
         </a>
 </p>
 
+</div>  
 
-</div>
