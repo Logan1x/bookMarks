@@ -15,6 +15,7 @@ export default function dashboard() {
     const unsubscribe = firebase
       .firestore()
       .collection("times")
+      .orderBy("timestamp", "desc")
       .where("uid", "==", currentUser.uid)
       .onSnapshot((snapshot) => {
         const newTimes = snapshot.docs.map((doc) => ({
