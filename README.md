@@ -2,6 +2,8 @@
 
 # BookMaarks : An Resource-Docket
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7fcbe0e1-cffc-4c62-9c82-d22d53cca190/deploy-status)](https://app.netlify.com/sites/bookmaarks/deploys)
+
 **Website url : https://bookmaarks.netlify.app/**
 
 BookMaarks:sparkles: Where you can add personalized important resources, URLs to create a docket of such stuff! Add to your collection and save them for later use. A smart way to view and manage your bookmarks.
