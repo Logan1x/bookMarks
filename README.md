@@ -48,7 +48,7 @@ This project is made out of ReactJS and **if you love to contribute please make 
 ### This Project was made with help of these contributors
 
 <p align="center">
-        <a href="https://github.com/logan1x/Nucleotide-Sequence-generator/graphs/contributors">
+        <a href="https://github.com/logan1x/bookMarks/graphs/contributors">
                 <img src="https://contributors-img.web.app/image?repo=logan1x/bookMarks" />
         </a>
 </p>
